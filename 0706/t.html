@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 請使用亂數產生一個值（1-100） 每次錯誤時，出現提示如下 例如： 亂數值：60 第1次：50 => 太小了（提示：50-100） 第2次：90 => 太大了（提示：50-90） 第3次：80 => 太大了（提示：50-80） 第4次：55 => 太小了（提示：55-80） 第5次：60 => 猜對了 -->
+    <h1>猜亂數</h1>
+    <p>1-100之間猜</p>
+    <label for="gn">輸入數字</label>
+    <input type="number" id="gn">
+    <button onclick="sent()">提交</button>
+    <br>
+    <p id="result">結果</p>
+    <script>
+        var real = Math.floor(Math.random() * 100) + 1;
+        var gn = document.getElementById("gn"); var n1 = 0;
+        var min = 1; var max = 100;
+        function sent() {
+            var guess = Number(gn.value);
+            if ((gn.value).trim() == "") {
+                alert("不能空白,請重新輸入")
+                return;
+            }
+            if (guess < 0 || guess > 100) {
+                alert("不再有效範圍內")
+                return;
+            }
+
+            n1 = n1 + 1;
+
+            if (guess == real) {
+                result.textContent = "猜對了"
+                return;
+            } else if (guess < real) {
+                min = guess;
+                result.textContent = "太小了第" + n1 + "次," + `${min}-${max}`
+            }
+            else if (guess > real) {
+                max = guess; result.textContent = "太大了第" + n1 + "次," + `${min}-${max}`
+            }
+        } 
+    </script>
+</body>
+
+</html>
