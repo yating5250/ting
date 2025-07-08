@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        arr1 = [5, 60, 3, 90, 33, 1, 100];
+        let max = arr1[0];
+        let min = arr1[0];
+        // for
+        for (let i = 1; i < arr1.length; i++) {
+            if (max < arr1[i]) {
+                max = arr1[i];
+            } else if (min > arr[i]) {
+                min = arr[i];
+            }
+            console.log(`最大值${max}`);
+            console.log(`最小值${min}`);
+
+
+        }
+        // for of
+        max = arr1[0];
+        min = arr1[0];
+        for (let n of arr1) {
+            if (max < arr1[n]) {
+                max = arr1[n];
+            } else if (min > arr[n]) {
+                min = arr[n];
+            }
+            console.log(`最大值${max}`);
+            console.log(`最小值${min}`);
+        }
+
+
+        // forEach
+        // arr1.forEach((x) => {
+
+        // });
+
+
+        arr1.sort((a,b)=>{
+            return a-b;
+        });
+        console.log(`最大值${arr1[arr1.length-1]}`);
+    </script>
+</body>
+
+</html>
